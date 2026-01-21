@@ -1,0 +1,26 @@
+Common items between Saab and Volvo
+
+fields:
+    public int nrDoors; // Number of doors on the car
+    public double enginePower; // Engine power of the car
+    public double currentSpeed; // The current speed of the car
+    public Color color; // Color of the car
+    public String modelName; // The car model name
+
+    collect these in Car superclass with default modifier since we have setters?
+
+getters and setters for these fields.
+
+ONLY Saab has methods for setting TURBO on / off. set these to private?
+ONLY Volvo has a final field trimFactor
+
+Methods with minor differences:
+
+    speedFactor
+    increment / decrement speed
+
+    define these in a Move interface,
+    or in Car class,
+    pros / cons ?
+           methods in interface has to be public
+    if we use car class we have one less file ig =)
