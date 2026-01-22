@@ -7,11 +7,11 @@ public abstract class Car implements Movable {
     Color color; // Color of the car
     String modelName; // The car model name
 
-    double x;
-    double y;
-    double angle; // -1 vänster 0 rakt fram 1 till höger? om 1 y * currentSpeed 1 sec?
+    private double x = 0;
+    private double y = 0;
+    private Direction dir; // 1 vänster 0 rakt fram -1 till höger? om 1 y * currentSpeed 1 sec?
 
-    // all future cars will also need to declare these fieldsx1
+    // all future cars will also need to declare these fields
 
     int getNrDoors(){
         return nrDoors;

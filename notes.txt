@@ -21,6 +21,8 @@ Methods with minor differences:
 
     define these in a Move interface,
     or in abstract methods in Car class,
+
     pros  / cons ?
             methods in interface has to be public
     if we use car class we have one less file ig =)
+            if we used an interface, all classes would have to implement versions of getters setters
