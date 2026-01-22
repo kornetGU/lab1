@@ -1,7 +1,8 @@
 import java.awt.*;
 
-class Saab95 extends Car implements Move {
-    public boolean turboOn;
+class Saab95 extends Car  {
+
+    private boolean turboOn;
 
     public Saab95(){
         nrDoors = 2;
@@ -15,29 +16,25 @@ class Saab95 extends Car implements Move {
     private void setTurboOn(){
 	    turboOn = true;
     }
-
     private void setTurboOff(){
 	    turboOn = false;
     }
 
     @Override
-    public double speedFactor(){
+    double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
         return enginePower * 0.01 * turbo;
     }
 
     @Override
-    public void incrementSpeed(double amount){
+    void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
-
     @Override
-    public void decrementSpeed(double amount){
+    void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
-
-
 
     // TODO fix this method according to lab pm
     public void gas(double amount){

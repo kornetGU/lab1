@@ -20,7 +20,7 @@ Methods with minor differences:
     increment / decrement speed
 
     define these in a Move interface,
-    or in Car class,
-    pros / cons ?
-           methods in interface has to be public
+    or in abstract methods in Car class,
+    pros  / cons ?
+            methods in interface has to be public
     if we use car class we have one less file ig =)

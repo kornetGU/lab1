@@ -1,11 +1,17 @@
 import java.awt.*;
 
-public class Car {
+public abstract class Car implements Movable {
     int nrDoors; // Number of doors on the car
     double enginePower; // Engine power of the car
     double currentSpeed; // The current speed of the car
     Color color; // Color of the car
     String modelName; // The car model name
+
+    double x;
+    double y;
+    double angle; // -1 vänster 0 rakt fram 1 till höger? om 1 y * currentSpeed 1 sec?
+
+    // all future cars will also need to declare these fieldsx1
 
     int getNrDoors(){
         return nrDoors;
@@ -29,5 +35,12 @@ public class Car {
         currentSpeed = 0;
     }
 
+    abstract double speedFactor();
+    abstract void incrementSpeed(double amount);
+    abstract void decrementSpeed(double amount);
 
+    @Override
+    public void move() {
+        x  += currentSpeed;
+    }
 }
