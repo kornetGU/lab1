@@ -45,4 +45,12 @@ class Saab95 extends Car  {
     public void brake(double amount){
         decrementSpeed(amount);
     }
+
+    public static void main(String[] args) {
+        Saab95 saabina = new Saab95();
+        saabina.startEngine();
+        saabina.move();
+        saabina.turnLeft();
+        saabina.move();
+    }
 }

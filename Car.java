@@ -7,9 +7,9 @@ public abstract class Car implements Movable {
     Color color; // Color of the car
     String modelName; // The car model name
 
-    private double x = 0;
-    private double y = 0;
-    private Direction dir; // 1 vänster 0 rakt fram -1 till höger? om 1 y * currentSpeed 1 sec?
+    private double x = 0.0;
+    private double y = 0.0;
+    private Direction dir = Direction.FORWARD; //
 
     // all future cars will also need to declare these fields
 
@@ -41,6 +41,57 @@ public abstract class Car implements Movable {
 
     @Override
     public void move() {
-        x  += currentSpeed;
+        double distance = currentSpeed * 10;
+        switch(dir) {
+            case FORWARD:
+                x += distance;
+                break;
+            case BACKWARD:
+                x -= distance;
+                break;
+            case RIGHT:
+                y -= distance;
+                break;
+            case LEFT:
+                y += distance;
+                break;
+        }
+        System.out.println("coordinates after moving:\nx: " + x + ", y: " + y);
+    }
+
+    @Override
+    public void turnLeft(){
+        switch(dir) {
+            case FORWARD:
+                dir = Direction.LEFT;
+                break;
+            case BACKWARD:
+                dir = Direction.RIGHT;
+                break;
+            case RIGHT:
+                dir = Direction.FORWARD;
+                break;
+            case LEFT:
+                dir = Direction.BACKWARD;
+                break;
+        }
+    }
+
+    @Override
+    public void turnRight(){
+        switch(dir) {
+            case FORWARD:
+                dir = Direction.RIGHT;
+                break;
+            case BACKWARD:
+                dir = Direction.LEFT;
+                break;
+            case RIGHT:
+                dir = Direction.BACKWARD;
+                break;
+            case LEFT:
+                dir = Direction.FORWARD;
+                break;
+        }
     }
 }
