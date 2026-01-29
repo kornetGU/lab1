@@ -41,57 +41,32 @@ public abstract class Car implements Movable {
 
     @Override
     public void move() {
-        double distance = currentSpeed * 10;
-        switch(dir) {
-            case FORWARD:
-                x += distance;
-                break;
-            case BACKWARD:
-                x -= distance;
-                break;
-            case RIGHT:
-                y -= distance;
-                break;
-            case LEFT:
-                y += distance;
-                break;
+        switch (dir) {
+            case FORWARD -> x += currentSpeed;
+            case BACKWARD -> x -= currentSpeed;
+            case LEFT -> y += currentSpeed;
+            case RIGHT -> y -= currentSpeed;
         }
-        System.out.println("coordinates after moving:\nx: " + x + ", y: " + y);
+        System.out.println("coordinates after moving:\n x: " + x + " y: " + y);
     }
 
     @Override
-    public void turnLeft(){
-        switch(dir) {
-            case FORWARD:
-                dir = Direction.LEFT;
-                break;
-            case BACKWARD:
-                dir = Direction.RIGHT;
-                break;
-            case RIGHT:
-                dir = Direction.FORWARD;
-                break;
-            case LEFT:
-                dir = Direction.BACKWARD;
-                break;
+    public void turnLeft() {
+        switch (dir) {
+            case FORWARD -> dir = Direction.LEFT;
+            case BACKWARD -> dir = Direction.RIGHT;
+            case LEFT -> dir = Direction.BACKWARD;
+            case RIGHT -> dir = Direction.FORWARD;
         }
     }
 
     @Override
-    public void turnRight(){
-        switch(dir) {
-            case FORWARD:
-                dir = Direction.RIGHT;
-                break;
-            case BACKWARD:
-                dir = Direction.LEFT;
-                break;
-            case RIGHT:
-                dir = Direction.BACKWARD;
-                break;
-            case LEFT:
-                dir = Direction.FORWARD;
-                break;
+    public void turnRight() {
+        switch (dir) {
+            case FORWARD -> dir = Direction.RIGHT;
+            case BACKWARD -> dir = Direction.LEFT;
+            case LEFT -> dir = Direction.FORWARD;
+            case RIGHT -> dir = Direction.BACKWARD;
         }
     }
 }
