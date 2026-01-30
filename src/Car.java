@@ -1,15 +1,22 @@
 import java.awt.*;
 
 public abstract class Car implements Movable {
-    int nrDoors;    /** Number of doors on the car */
-    double enginePower;    /** Engine power of the car */
-    double currentSpeed;    /** The current speed of the car */
-    Color color;    /** Color of the car */
-    String modelName;     /** The car model name */
+        int nrDoors;    /** Number of doors on the car */
+        double enginePower;    /** Engine power of the car */
+        double currentSpeed;    /** The current speed of the car */
+        Color color;    /** Color of the car */
+        String modelName;     /** The car model name */
 
     double x = 0.0;    /** Represents the cars current position on the x-axis. */
     double y = 0.0;    /** Represents the cars current position on the y-axis. */
     Direction dir = Direction.FORWARD;    /** Represents the cars current direction. */
+
+    public Car(int nrDoors, double enginePower, Color color, String modelName) {
+        this.nrDoors = nrDoors;
+        this.enginePower = enginePower;
+        this.color = color;
+        this.modelName = modelName;
+    }
 
     /**
      * Getter method for the nrDoors field.

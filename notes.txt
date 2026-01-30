@@ -26,3 +26,20 @@ Methods with minor differences:
             methods in interface has to be public
     if we use car class we have one less file ig =)
             if we used an interface, all classes would have to implement versions of getters setters
+
+
+
+1
+    Skapa en arvshierarki där Volvo240 och Saab95 ingår, som eliminerar all kod-duplicering, och som följer Open-Closed Principle. Gör dessa ändringar utan att ändra på klassernas funktionalitet.
+        Bör ni använda implementationsarv (subclassing) eller specifikationsarv (interfaces)? Varför? Kan båda användas? Vilka för- och nackdelar ser ni?
+            med interface kan vi ej definiera variablerna, eftersom dessa kommer bli final static
+
+    I originalfilerna är alla metoder och variabler public, vilket exponerar allt till användaren. Ändra synligheten på de metoder och variabler som användaren inte behöver se eller känna till.
+        Vilken synlighet bör ni använda för de olika metoder och variabler som klasserna innehåller? Vilket gränssnitt bör ni exponera?
+
+2
+    Se till att era bilar implementerar interfacet Movable, med någon lämplig intern representation av deras riktning och position.
+    Metoden move ska fungera så att beroende på riktning ökas (eller minskas) bilens x- eller y-koordinat med dess currentSpeed.
+        vi representerar bilens koordinater med x och y som instansvariabler i Car
+        samt dess rikting med en enum class Direction
+

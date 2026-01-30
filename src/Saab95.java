@@ -8,11 +8,8 @@ class Saab95 extends Car  {
      * Constructor to initialize the state of the Saab95.
      */
     public Saab95(){
-        nrDoors = 2;
-        color = Color.red;
-        enginePower = 125;
-	    turboOn = false;
-        modelName = "Saab95";
+        super(2,125,Color.red,"Saab95");
+        turboOn = false;
         stopEngine();
     }
 

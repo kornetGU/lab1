@@ -3,7 +3,6 @@ import org.junit.*;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
-
 public class CarTest {
 
     Saab95 saab;
@@ -26,10 +25,20 @@ public class CarTest {
         assertTrue(saab.currentSpeed > initSpeed);
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void testGasFail() {
+        saab.gas(2);
+    }
+
     @Test
     public void testBreak() {
         saab.brake(1);
         assertTrue(saab.currentSpeed < initSpeed);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testBreakFail() {
+        saab.brake(2);
     }
 
     @Test
