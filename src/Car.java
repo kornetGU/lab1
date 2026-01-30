@@ -112,6 +112,7 @@ public abstract class Car implements Movable {
     /**
      * gas - Increases the cars speed by a given value
      * @param amount - value to gas (Increase the speed) by
+     * @throws IllegalArgumentException if amount is > 1 or < 0.
      */
     void gas(double amount) {
         interval(amount);
@@ -121,8 +122,9 @@ public abstract class Car implements Movable {
     }
 
     /**
-     * brake - brakes the cars speed by a given value
-     * @param amount - value to brake (Decrement the speed) by
+     * Brakes the cars speed by a given value
+     * @param amount Value to brake (Decrement the speed) by
+     * @throws IllegalArgumentException if amount is > 1 or < 0.
      */
     void brake(double amount){
         interval(amount);
@@ -140,13 +142,4 @@ public abstract class Car implements Movable {
             throw new IllegalArgumentException("Given amount must be between 0 and 1.");
         }
     }
-
-   // /**
-   //  * Ensure currentSpeed is in the interval 0 to 'enginePower'.
-   //  * @param enginePower - enginePower of the car
-   //  */
-   // public void speedRange(double enginePower) {
-    //    currentSpeed = Math.max(0, Math.min(enginePower, currentSpeed));
-    //}
-
 }

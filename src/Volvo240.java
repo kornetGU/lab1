@@ -16,7 +16,7 @@ class Volvo240 extends Car {
     }
 
     /**
-     * Calculates the speedfactor based on turbo and enginepower.
+     * Calculates the speedfactor based on trimfactor and enginepower.
      * @return The calculated speedfactor.
      */
     @Override
